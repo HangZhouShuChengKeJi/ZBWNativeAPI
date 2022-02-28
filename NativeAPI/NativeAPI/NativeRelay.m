@@ -10,7 +10,7 @@
 #import "RelayObject.h"
 #import <UIKit/UIKit.h>
 #import <objc/runtime.h>
-#import <ZBWJson.h>
+#import <ZBWJson/ZBWJson.h>
 
 
 #define NR_WeakSelf     __weak typeof(self) weakSelf = self;
