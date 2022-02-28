@@ -43,7 +43,7 @@ Pod::Spec.new do |s|
   # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
 
   s.platform     = :ios, "7.0"
-  s.author             = { "bwzhu" => "" }
+  s.author             = { "bwzhu" => "bowen.zhu@91chengguo.com" }
 
 
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
