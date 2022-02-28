@@ -1,0 +1,101 @@
+#!/bin/sh
+
+#get current path
+abs_path(){
+    local path=$1
+    local basename=$( basename $path )
+    local dirname=$(  dirname  $path )
+    cd $dirname
+    if [ -h $basename ]; then
+        path=$( readlink $basename )
+        abs_path $path
+    else
+        pwd
+    fi
+}
+
+install(){
+    #init path
+    local project_root=$1/../..
+    local napi_path=$project_root/NAPI
+
+    #check exist
+    if [ -f $napi_path/ios/apimap ]; then
+        echo "Already install napi, skip. Try to use 'napi update' to upgrade."
+        exit
+    fi
+
+    #init environment
+    mkdir $napi_path/apilist
+    svn co http://122.225.114.30:10080/svn/commons/nativeapi/apilist/ $napi_path/apilist/
+    svn co http://122.225.114.30:10080/svn/commons/nativeapi/res/ $napi_path/
+
+
+    #rsync -av
+#rsync -avr --copy-links --no-relative --exclude '*/.svn/*' --files-from="$napi_path/ios" / "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
+#rsync -avr --copy-links --no-relative --exclude '*/.svn/*' --files-from="$napi_path/common" / "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
+#    rsync -avr --copy-links --no-relative --exclude '*/.svn/*' --files-from="$napi_path/common/lxlib.js" / "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
+#    rsync -avr --copy-links --no-relative --exclude '*/.svn/*' --files-from="$napi_path/CRMap.h" / "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
+#    rsync -avr --copy-links --no-relative --exclude '*/.svn/*' --files-from="$napi_path/CRMap.m" / "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
+
+    cp $napi_path/ios/apimap ${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/
+    cp $napi_path/common/index.html ${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/
+    cp $napi_path/common/lxlib.js ${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/
+    cp $napi_path/common/jquery-2.1.4.js ${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/
+
+}
+
+update(){
+    svn up $1
+
+}
+
+fupdate(){
+    rm -rf $1
+    install $1
+}
+
+run(){
+    #python naan.py apilist_path file_search_path
+    local project_root=$1/../..
+    local napi_path=$project_root/NAPI
+
+    python $napi_path/ios/naan.py $napi_path/ios/apimap $project_root
+    python $napi_path/common/auto_js.py $napi_path/apilist/apilist $napi_path/common/lxlib.js $napi_path/common/index.html
+}
+
+xcode(){
+    #check exist
+    local project_root=$1/../..
+    local napi_path=$project_root/NAPI
+    if [ -f $napi_path/ios/apimap ]; then
+        run $1
+        cp $napi_path/ios/apimap ${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/
+        cp $napi_path/common/index.html ${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/
+        cp $napi_path/common/lxlib.js ${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/
+        cp $napi_path/common/jquery-2.1.4.js ${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/
+#cp $napi_path/CRMap.h ${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/
+#cp $napi_path/CRMap.m ${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/
+        exit
+    fi
+
+    install $1
+    run $1
+}
+
+
+if [ ${1}x = "installx" ]; then
+    install $(abs_path $0)
+elif [ ${1}x = "updatex" ]; then
+    update $(abs_path $0)
+elif [ ${1}x = "fupdatex" ]; then
+    fupdate $(abs_path $0)
+elif [ ${1}x = "xcodex" ]; then
+    xcode $(abs_path $0)
+elif [ ${1}x = "helpx" ]; then
+    echo "install\t\t-install napi by the first time.\nupdate\t\t-upgrade napi.\nrun\t\t-run napi.fupdate\t\t-focus upgrade reinstall"
+elif [ ${1}x = "runx" ]; then
+    run $(abs_path $0)
+else
+    echo "Type 'napi help' for usage."
+fi

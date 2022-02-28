@@ -1,0 +1,470 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1FD393C91B5DEA1F00AF3AD6 /* NativeAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FD393C81B5DEA1F00AF3AD6 /* NativeAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FD393CF1B5DEA1F00AF3AD6 /* NativeAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FD393C31B5DEA1F00AF3AD6 /* NativeAPI.framework */; };
+		1FD393D61B5DEA1F00AF3AD6 /* NativeAPITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD393D51B5DEA1F00AF3AD6 /* NativeAPITests.m */; };
+		1FD393E61B5DEB7700AF3AD6 /* NativeRelay.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FD393E41B5DEB7700AF3AD6 /* NativeRelay.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FD393E71B5DEB7700AF3AD6 /* NativeRelay.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD393E51B5DEB7700AF3AD6 /* NativeRelay.m */; };
+		1FD393EA1B5DECA500AF3AD6 /* RelayObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FD393E81B5DECA500AF3AD6 /* RelayObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FD393EB1B5DECA500AF3AD6 /* RelayObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD393E91B5DECA500AF3AD6 /* RelayObject.m */; };
+		1FD393FE1B5E871E00AF3AD6 /* NativeAPIList.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1FD393FD1B5E871E00AF3AD6 /* NativeAPIList.txt */; };
+		1FEC3AA31B6C70CB006A06BB /* napi in Resources */ = {isa = PBXBuildFile; fileRef = 1FEC3AA21B6C70CB006A06BB /* napi */; };
+		8C19C4C121E5E5650028AFB7 /* NativeAPIHandlerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C19C4C021E5E5650028AFB7 /* NativeAPIHandlerDelegate.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1FD393D01B5DEA1F00AF3AD6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1FD393BA1B5DEA1F00AF3AD6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1FD393C21B5DEA1F00AF3AD6;
+			remoteInfo = NativeAPI;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1FD393C31B5DEA1F00AF3AD6 /* NativeAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NativeAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FD393C71B5DEA1F00AF3AD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1FD393C81B5DEA1F00AF3AD6 /* NativeAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeAPI.h; sourceTree = "<group>"; };
+		1FD393CE1B5DEA1F00AF3AD6 /* NativeAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NativeAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FD393D41B5DEA1F00AF3AD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1FD393D51B5DEA1F00AF3AD6 /* NativeAPITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NativeAPITests.m; sourceTree = "<group>"; };
+		1FD393E41B5DEB7700AF3AD6 /* NativeRelay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeRelay.h; sourceTree = "<group>"; };
+		1FD393E51B5DEB7700AF3AD6 /* NativeRelay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NativeRelay.m; sourceTree = "<group>"; };
+		1FD393E81B5DECA500AF3AD6 /* RelayObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RelayObject.h; sourceTree = "<group>"; };
+		1FD393E91B5DECA500AF3AD6 /* RelayObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RelayObject.m; sourceTree = "<group>"; };
+		1FD393FD1B5E871E00AF3AD6 /* NativeAPIList.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NativeAPIList.txt; sourceTree = "<group>"; };
+		1FEC3AA21B6C70CB006A06BB /* napi */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = napi; sourceTree = "<group>"; };
+		8C19C4C021E5E5650028AFB7 /* NativeAPIHandlerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeAPIHandlerDelegate.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1FD393BF1B5DEA1F00AF3AD6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1FD393CB1B5DEA1F00AF3AD6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FD393CF1B5DEA1F00AF3AD6 /* NativeAPI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1FD393B91B5DEA1F00AF3AD6 = {
+			isa = PBXGroup;
+			children = (
+				1FD393C51B5DEA1F00AF3AD6 /* NativeAPI */,
+				1FD393D21B5DEA1F00AF3AD6 /* NativeAPITests */,
+				1FD393C41B5DEA1F00AF3AD6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1FD393C41B5DEA1F00AF3AD6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1FD393C31B5DEA1F00AF3AD6 /* NativeAPI.framework */,
+				1FD393CE1B5DEA1F00AF3AD6 /* NativeAPITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1FD393C51B5DEA1F00AF3AD6 /* NativeAPI */ = {
+			isa = PBXGroup;
+			children = (
+				8C19C4C021E5E5650028AFB7 /* NativeAPIHandlerDelegate.h */,
+				1FEC3AA21B6C70CB006A06BB /* napi */,
+				1FD393C81B5DEA1F00AF3AD6 /* NativeAPI.h */,
+				1FD393E41B5DEB7700AF3AD6 /* NativeRelay.h */,
+				1FD393E51B5DEB7700AF3AD6 /* NativeRelay.m */,
+				1FD393E81B5DECA500AF3AD6 /* RelayObject.h */,
+				1FD393E91B5DECA500AF3AD6 /* RelayObject.m */,
+				1FD393C61B5DEA1F00AF3AD6 /* Supporting Files */,
+			);
+			path = NativeAPI;
+			sourceTree = "<group>";
+		};
+		1FD393C61B5DEA1F00AF3AD6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1FD393C71B5DEA1F00AF3AD6 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1FD393D21B5DEA1F00AF3AD6 /* NativeAPITests */ = {
+			isa = PBXGroup;
+			children = (
+				1FD393FD1B5E871E00AF3AD6 /* NativeAPIList.txt */,
+				1FD393D51B5DEA1F00AF3AD6 /* NativeAPITests.m */,
+				1FD393D31B5DEA1F00AF3AD6 /* Supporting Files */,
+			);
+			path = NativeAPITests;
+			sourceTree = "<group>";
+		};
+		1FD393D31B5DEA1F00AF3AD6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1FD393D41B5DEA1F00AF3AD6 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		1FD393C01B5DEA1F00AF3AD6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FD393C91B5DEA1F00AF3AD6 /* NativeAPI.h in Headers */,
+				1FD393E61B5DEB7700AF3AD6 /* NativeRelay.h in Headers */,
+				8C19C4C121E5E5650028AFB7 /* NativeAPIHandlerDelegate.h in Headers */,
+				1FD393EA1B5DECA500AF3AD6 /* RelayObject.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		1FD393C21B5DEA1F00AF3AD6 /* NativeAPI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1FD393D91B5DEA1F00AF3AD6 /* Build configuration list for PBXNativeTarget "NativeAPI" */;
+			buildPhases = (
+				1FD393BE1B5DEA1F00AF3AD6 /* Sources */,
+				1FD393BF1B5DEA1F00AF3AD6 /* Frameworks */,
+				1FD393C01B5DEA1F00AF3AD6 /* Headers */,
+				1FD393C11B5DEA1F00AF3AD6 /* Resources */,
+				1FD393FC1B5E7DC300AF3AD6 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NativeAPI;
+			productName = NativeAPI;
+			productReference = 1FD393C31B5DEA1F00AF3AD6 /* NativeAPI.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		1FD393CD1B5DEA1F00AF3AD6 /* NativeAPITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1FD393DC1B5DEA1F00AF3AD6 /* Build configuration list for PBXNativeTarget "NativeAPITests" */;
+			buildPhases = (
+				1FD393CA1B5DEA1F00AF3AD6 /* Sources */,
+				1FD393CB1B5DEA1F00AF3AD6 /* Frameworks */,
+				1FD393CC1B5DEA1F00AF3AD6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1FD393D11B5DEA1F00AF3AD6 /* PBXTargetDependency */,
+			);
+			name = NativeAPITests;
+			productName = NativeAPITests;
+			productReference = 1FD393CE1B5DEA1F00AF3AD6 /* NativeAPITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1FD393BA1B5DEA1F00AF3AD6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = "yin shen";
+				TargetAttributes = {
+					1FD393C21B5DEA1F00AF3AD6 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					1FD393CD1B5DEA1F00AF3AD6 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+				};
+			};
+			buildConfigurationList = 1FD393BD1B5DEA1F00AF3AD6 /* Build configuration list for PBXProject "NativeAPI" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1FD393B91B5DEA1F00AF3AD6;
+			productRefGroup = 1FD393C41B5DEA1F00AF3AD6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1FD393C21B5DEA1F00AF3AD6 /* NativeAPI */,
+				1FD393CD1B5DEA1F00AF3AD6 /* NativeAPITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1FD393C11B5DEA1F00AF3AD6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FEC3AA31B6C70CB006A06BB /* napi in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1FD393CC1B5DEA1F00AF3AD6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FD393FE1B5E871E00AF3AD6 /* NativeAPIList.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1FD393FC1B5E7DC300AF3AD6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1FD393BE1B5DEA1F00AF3AD6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FD393EB1B5DECA500AF3AD6 /* RelayObject.m in Sources */,
+				1FD393E71B5DEB7700AF3AD6 /* NativeRelay.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1FD393CA1B5DEA1F00AF3AD6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FD393D61B5DEA1F00AF3AD6 /* NativeAPITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1FD393D11B5DEA1F00AF3AD6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1FD393C21B5DEA1F00AF3AD6 /* NativeAPI */;
+			targetProxy = 1FD393D01B5DEA1F00AF3AD6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1FD393D71B5DEA1F00AF3AD6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		1FD393D81B5DEA1F00AF3AD6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		1FD393DA1B5DEA1F00AF3AD6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "";
+				INFOPLIST_FILE = NativeAPI/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
+				LD_DYLIB_INSTALL_NAME = "";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = NativeAPIBridgingHeader.h;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VALID_ARCHS = "arm64 armv7";
+			};
+			name = Debug;
+		};
+		1FD393DB1B5DEA1F00AF3AD6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "";
+				INFOPLIST_FILE = NativeAPI/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
+				LD_DYLIB_INSTALL_NAME = "";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = NativeAPIBridgingHeader.h;
+				VALID_ARCHS = "arm64 armv7";
+			};
+			name = Release;
+		};
+		1FD393DD1B5DEA1F00AF3AD6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = NativeAPITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1FD393DE1B5DEA1F00AF3AD6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = NativeAPITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1FD393BD1B5DEA1F00AF3AD6 /* Build configuration list for PBXProject "NativeAPI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1FD393D71B5DEA1F00AF3AD6 /* Debug */,
+				1FD393D81B5DEA1F00AF3AD6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1FD393D91B5DEA1F00AF3AD6 /* Build configuration list for PBXNativeTarget "NativeAPI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1FD393DA1B5DEA1F00AF3AD6 /* Debug */,
+				1FD393DB1B5DEA1F00AF3AD6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1FD393DC1B5DEA1F00AF3AD6 /* Build configuration list for PBXNativeTarget "NativeAPITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1FD393DD1B5DEA1F00AF3AD6 /* Debug */,
+				1FD393DE1B5DEA1F00AF3AD6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1FD393BA1B5DEA1F00AF3AD6 /* Project object */;
+}

@@ -1,0 +1,23 @@
+PODS:
+  - ZBWJson (0.0.11)
+  - ZBWNativeAPI (0.2.4):
+    - ZBWJson (~> 0.0.1)
+
+DEPENDENCIES:
+  - ZBWNativeAPI (from `..`)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - ZBWJson
+
+EXTERNAL SOURCES:
+  ZBWNativeAPI:
+    :path: ".."
+
+SPEC CHECKSUMS:
+  ZBWJson: 500456abe901e9756f8290e64e63ba1dd9cb70bb
+  ZBWNativeAPI: 45b9da747dac657dfdb15e4545db18968d629d3e
+
+PODFILE CHECKSUM: 04e6ee7e47e40660d5a9a7543ea15e7e79b08ee7
+
+COCOAPODS: 1.11.2

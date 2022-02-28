@@ -1,0 +1,219 @@
+
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta charset="utf-8">
+
+    <script type="application/javascript" src="./lxlib.js"></script>
+    <script type="application/javascript" src="./jquery-2.1.4.js"></script>
+    <script type="text/javascript">
+            d = {key1: 'param1'}
+        </script>
+
+    <style>
+
+        body{
+        background-color: #f3f3f3;
+        }
+
+        @media screen and (max-width:600px){
+        body{
+        font-size:14px;
+        margin-top:8px;
+        margin-left:0px;
+        margin-right:0px;
+        }
+        }
+
+        .tableView{
+        margin-top:5px;
+        width:100%;
+        height:100%;
+        }
+
+        .tableView .tableViewCell{
+        width:100%;
+        height:60px;
+        background-color:#FFFFFF;
+        border-top:0px;
+        border-right:0px;
+        border-left:0px;
+        border-bottom: 1px solid #E0E0E0;
+        }
+
+        .tableView .tableViewCell > .contentLabel{
+        font-size:24px;
+        font-color:#000000;
+        padding-left:10px;
+        float:left;
+        }
+
+        .header{
+        font-size:16px;
+        font-weight:bold;
+        margin-left:10px;
+        }
+
+        .panelbg{
+        z-index: 9998;
+        background-color:#000000;
+        width:100%;
+        height:100%;
+        position: absolute;
+        top:0px;
+        opacity:0.5;
+
+        }
+
+        .panel{
+        z-index: 9999;
+        background-color:#FFFFFF;
+        border-radius:5px;
+        border: 1px solid #E0E0E0;
+        width:80%;
+        height:70%;
+        position: absolute;
+        top:30px;
+        }
+
+        .textfield{
+        width:100%;
+        height:30px;
+        border-top:0px;
+        border-right:0px;
+        border-left:0px;
+        border-bottom: 1px solid #E0E0E0;
+        font-size:18px;
+        margin-top:10px;
+        margin-left:auto;
+        }
+
+        .submit{
+        bottom:0px;
+        position:absolute;
+        font-size:20px;
+        background-color:#FFFFFF;
+        width:100%;
+        border-top:1px solid #E0E0E0;
+        border-right:0px;
+        border-left:0px;
+        border-bottom:0px;
+        height:30px;
+        left:0px;
+        }
+
+    </style>
+
+    <script>
+
+
+            function showParamPanel(method,args,hasCallback){
+                var argsArr = args.replace("[","").replace("]","").split(",");
+                var maskPanel = "<div class='panelbg'></div><div class='panel'>";
+                for(var i = 0;i < argsArr.length;i++){ maskPanel+="<input class='textfield' placeholder="+argsArr[i]+"></input>"; }
+                maskPanel+="<button class='submit' onclick='dismissParamPanel()' napimethod='"+method+"' napiargs='"+args+"' napihascallback="+hasCallback+" >GO</button></div>";
+                $('.tableView').append(maskPanel);
+                $('.panel').css('left',($(document.body).width()-$('.panel').width())/2);
+                {$('html,body').animate({scrollTop: '0px'}, 400);};
+            }
+
+
+            function dismissParamPanel(method,args,hasCallback){
+                var method = $('.submit').attr('napimethod');
+                var args = $('.submit').attr('napiargs');
+                var hasCallback = $('.submit').attr('napihascallback');
+                args = args.replace('[','').replace(']','').split(',')
+                var inputList = $('.panel').find('input')
+                var argList="";
+
+                for(var i = 0;i < inputList.length;++i){
+                    if (inputList[i].value == '') {
+                        argList+="'"+args[i].replace(' ','')+"'";}
+                    else{
+                        argList+="'"+inputList[i].value+"'"}
+                    if (i != inputList.length-1) argList+=",";
+                 }
+
+
+                var func = 'lx.'+method+"("+argList+",function(ret){JSON.stringify(ret);})"
+                eval(func);
+                $('.panelbg').remove();
+                $('.panel').remove();
+            }
+        </script>
+
+    <body>
+    <div class="header">
+        Native API Demo List
+    </div>
+    <div class="tableView">
+        <!-- here demo start -->
+
+        <button class="tableViewCell" id="cell1" onclick="lx.pop()">
+            <div class="contentLabel">pop</div>
+       </button>
+        <button class="tableViewCell" id="cell1" onclick="showParamPanel('alert','[title, message, cancelButtonTitle, confirmButtonTitle]','YES')">
+            <div class="contentLabel">alert</div>
+       </button>
+        <button class="tableViewCell" id="cell1" onclick="showParamPanel('push','[code, d]','NO')">
+            <div class="contentLabel">push</div>
+       </button>
+        <button class="tableViewCell" id="cell1" onclick="showParamPanel('toRoot','[tabIndex]','NO')">
+            <div class="contentLabel">toRoot</div>
+       </button>
+        <button class="tableViewCell" id="cell1" onclick="showParamPanel('openUrl','[scheme]','NO')">
+            <div class="contentLabel">openUrl</div>
+       </button>
+        <button class="tableViewCell" id="cell1" onclick="showParamPanel('canOpenUrl','[scheme]','YES')">
+            <div class="contentLabel">canOpenUrl</div>
+       </button>
+        <button class="tableViewCell" id="cell1" onclick="showParamPanel('webTitle','[title]','NO')">
+            <div class="contentLabel">webTitle</div>
+       </button>
+        <button class="tableViewCell" id="cell1" onclick="showParamPanel('toast','[msg]','NO')">
+            <div class="contentLabel">toast</div>
+       </button>
+        <button class="tableViewCell" id="cell1" onclick="lx.shakeServicesEnable( function(ret){alert(JSON.stringify(ret));})">
+            <div class="contentLabel">shakeServicesEnable</div>
+       </button>
+        <button class="tableViewCell" id="cell1" onclick="lx.shakeServicesDisable( function(ret){alert(JSON.stringify(ret));})">
+            <div class="contentLabel">shakeServicesDisable</div>
+       </button>
+        <button class="tableViewCell" id="cell1" onclick="lx.shakeServicesAction( function(ret){alert(JSON.stringify(ret));})">
+            <div class="contentLabel">shakeServicesAction</div>
+       </button>
+        <button class="tableViewCell" id="cell1" onclick="lx.camera( function(ret){alert(JSON.stringify(ret));})">
+            <div class="contentLabel">camera</div>
+       </button>
+        <button class="tableViewCell" id="cell1" onclick="showParamPanel('screenshot','[cutSizeWidth, cutSizeHeight, scale]','YES')">
+            <div class="contentLabel">screenshot</div>
+       </button>
+        <button class="tableViewCell" id="cell1" onclick="lx.location( function(ret){alert(JSON.stringify(ret));})">
+            <div class="contentLabel">location</div>
+       </button>
+        <button class="tableViewCell" id="cell1" onclick="lx.login( function(ret){alert(JSON.stringify(ret));})">
+            <div class="contentLabel">login</div>
+       </button>
+        <button class="tableViewCell" id="cell1" onclick="showParamPanel('scheduleNotification','[time, content]','YES')">
+            <div class="contentLabel">scheduleNotification</div>
+       </button>
+        <button class="tableViewCell" id="cell1" onclick="showParamPanel('alipay','[tradeNo, productName, productDescription, amount, notifyURL, scheme]','YES')">
+            <div class="contentLabel">alipay</div>
+       </button>
+        <button class="tableViewCell" id="cell1" onclick="showParamPanel('share','[shareUrl, shareTitle, shareImageUrl, shareDescription, showFlag]','YES')">
+            <div class="contentLabel">share</div>
+       </button>
+        <button class="tableViewCell" id="cell1" onclick="showParamPanel('loadImage','[imageUrl]','NO')">
+            <div class="contentLabel">loadImage</div>
+       </button>
+        <button class="tableViewCell" id="cell1" onclick="showParamPanel('setClipboardText','[text]','NO')">
+            <div class="contentLabel">setClipboardText</div>
+       </button>
+        <button class="tableViewCell" id="cell1" onclick="lx.getClipboardText( function(ret){alert(JSON.stringify(ret));})">
+            <div class="contentLabel">getClipboardText</div>
+       </button>
+        </button>
+        <!-- here demo end -->
+    </div>
+    </body>
+</html>

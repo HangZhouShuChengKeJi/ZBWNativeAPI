@@ -1,0 +1,1 @@
+share(shareTitle,shareUrl)->(shareSucceed)~ShareController
