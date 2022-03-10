@@ -36,7 +36,7 @@
         return nil;
     }
     
-    NSLog(expression);
+//    NSLog(expression);
     NSScanner *scanner = [NSScanner scannerWithString:eachApi];
     NSString *apiName = NULL;
     // apiName
