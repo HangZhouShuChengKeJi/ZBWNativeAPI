@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "ZBWNativeAPI"
-  s.version      = "0.2.5"
+  s.version      = "0.2.6"
   s.summary      = "ZBWNativeAPI."
 
   # This description is used to generate tags and improve search results.
@@ -99,6 +99,6 @@ Pod::Spec.new do |s|
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
 
-  s.dependency 'ZBWJson', '~>0.0.1'
+  s.dependency 'ZBWJson', '~>0.1.1'
 
 end
